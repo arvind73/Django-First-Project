@@ -1,0 +1,11 @@
+h1 {
+    color: rgb(71, 87, 73);
+}
+
+h2 {
+    color:rgb(207, 33, 33);
+}
+
+table, th, td {
+    border: 2px solid black;
+}

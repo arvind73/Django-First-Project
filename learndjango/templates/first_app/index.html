@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}"/>
+</head>
+<body>
+    <h1>Greetings to you</h1>
+    <h2>Here are your access records:</h2>
+    <div class="djangotwo">
+        {% if access_records %}
+        <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for access_record in  access_records %}
+            <tr>
+                <td>{{access_record.name}}</td>
+                <td>{{access_record.date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>We're sorry, no access record found!</p>
+        {% endif %}
+
+    </div>
+    <p>I'm from the index.html inside first_app folder of templates directory </p>
+    <p>Here's a quick picture of an elephant</p>
+    <img src="{% static 'images/pic.jpeg' %}" alt="Didn't show up!" /> 
+</body>
+</html>
